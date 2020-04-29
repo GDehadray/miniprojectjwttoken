@@ -1,0 +1,348 @@
+Steps to implement the MiniProject
+----------------------------------
+1) make the database ready for MiniProject implementation
+
+        - in our MiniProject we are using MySQL database.
+
+Tables
+-------
+=> login_details
+=> about
+=> home
+=> contact
+
+******************************************
+host   :   localhost
+
+user   :   root
+
+password:  root
+
+database:  miniproject
+
+tables  :  login_details
+           about
+           home
+           contact
+******************************************
+
+2) create the angular application
+
+    > ng new miniproject
+
+
+3) switch to angular application
+
+    > cd miniproject
+
+4) download the following node modules
+
+    => express
+    => mysql
+    => body-parser
+    => cors
+    => jwt-simple
+
+        - "express" module used to develop the rest apis.
+
+        - "mysql" module used to connect to mysql database.
+
+        - "body-parser" module used to read the post parameters(client data).
+
+        - "cors" module used to enable the ports communication.
+
+        - "jwt-simple" module used to generate the tokens.
+
+    - we will download above modules by using "yarn" tool
+
+> yarn add express mysql body-parser cors jwt-simple --save
+
+
+5) develop the rest apis by using nodejs
+
+****************************************************
+miniproject
+         server
+            config
+               db_properties.js
+               db_connection.js
+               token.js
+               generate_token.js
+               auth.js
+            login
+                login.js
+            about
+                about.js
+            home
+                home.js
+            contact
+                contact.js
+            logout
+                logout.js
+            server.js
+***************************************************
+
+    - "db_properties.js" file used to maintain the mysql database datails.
+
+    - "db_connection.js" file used to create the mysql connection object.
+
+    - "token.js" file used to save the server side token.
+
+    - "generate_token.js" file used to generate the token based on successful authentication.
+
+    - "auth.js" file used to compare the client side token with server side token (middleware)
+
+    - "login.js" file used to create the login rest api
+
+    - "about.js" file used to fetch the data from "about" table.
+
+    - "contact.js" file used to fetch the data from "contact" table.
+
+    - "home.js" file used to fetch the data from "home" table.
+
+    - "logout.js" file used to delete the server side token.
+
+    - "server.js" file is the main server file
+
+    - node engine starts the execution from "server.js" file. 
+
+step 6.
+    start the node server
+
+    > cd miniproject
+    > cd server
+    > node server
+
+step 7.
+    test the rest apis by using Postman
+
+    => http://localhost:8080/login    (POST)
+
+    => http://localhost:8080/about    (GET)
+
+    => http://localhost:8080/home     (GET)
+
+    => http://localhost:8080/contact  (GET)
+
+    => http://localhost:8080/logout   (GET)
+
+step 8.
+    divide the angular project into multiple modules
+
+***********************************************************
+AppModule
+
+LoginModule
+
+DashboardModule
+
+AboutModule
+
+ContactModule
+
+HomeModule
+
+TokenModule
+***********************************************************
+
+TokemModule
+-----------
+
+*****************************************
+miniproject
+         src
+           app
+             token
+                token.service.ts
+                auth.filter.ts
+                token.module.ts
+****************************************
+
+
+AboutModule
+-----------
+*******************************************
+miniproject
+         src
+           app
+             about
+               about.service.ts
+               about.component.ts
+               about.component.html
+
+               about.module.ts
+*******************************************
+
+
+HomeModule
+-----------
+*******************************************
+miniproject
+         src
+           app
+             home
+               home.service.ts
+               home.component.ts
+               home.component.html
+
+               home.module.ts
+*******************************************
+
+ContactModule
+-------------
+*******************************************
+miniproject
+         src
+           app
+             contact
+               contact.service.ts
+               contact.component.ts
+               contact.component.html
+
+               contact.module.ts
+*******************************************
+
+DashboardModule
+---------------
+
+**************************************************
+miniproject
+          src
+            app
+              dashboard
+                 logout.service.ts
+
+                 dashboard.component.ts
+                 dashboard.component.html
+
+                 dashboard.module.ts
+*************************************************
+
+LoginModule
+-----------
+
+***********************************************************************
+miniproject
+          src
+            app
+              login
+                 login.service.ts
+
+                 login.component.ts
+                 login.component.html
+
+                 login.module.ts
+**********************************************************************
+
+
+AppModule
+---------
+
+*******************************************************************
+app.module.ts
+
+app.component.ts
+app.component.html
+******************************************************************
+
+step 9.
+  execute the project
+
+Terminal-1
+----------
+> cd miniproject
+> cd server
+> node server
+
+Terminal-2
+----------
+> cd miniproject
+> ng s -o
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
